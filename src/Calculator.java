@@ -35,7 +35,7 @@ public class Calculator {
         return switch (num.toUpperCase()) {
             case "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X" -> true;
             default -> {
-                fromRomanToArabic(num.toUpperCase());
+                toInt(num.toUpperCase());
                 yield false;
             }
         };
@@ -67,7 +67,7 @@ public class Calculator {
 
         if (x > 0 && x < 11)
             return x;
-        else throw new IllegalArgumentException("First and Second numbers should be between [1,10] and Integer");
+        else throw new IllegalArgumentException("First and Second numbers should be between [1,10] (or [I, X]) and Integer");
     }
 
     private void getRomanResult(int a, String sign, int b) {
